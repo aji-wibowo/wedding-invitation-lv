@@ -336,6 +336,11 @@ figure {
 @media screen and (max-width: 768px) {
     .fh5co-cover {
         height: 600px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top !important;
+        position: relative;
+        width: 100%;
     }
 }
 .fh5co-cover .display-t,

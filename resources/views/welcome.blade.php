@@ -485,8 +485,6 @@
             var d = new Date();
             d.setDate(d.getDate() + 44);
 
-            console.log(d);
-
             var sMessage = '{{ Session::has('sweetAlertMessage') }}';
             if (sMessage == '1') {
                 Swal.fire({

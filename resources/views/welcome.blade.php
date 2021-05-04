@@ -58,7 +58,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-2">
-                        <div id="fh5co-logo"><a href="{{url('/')}}">AZ Wedding<strong>.</strong></a></div>
+                        <div id="fh5co-logo"><a href="{{ url('/') }}">AZ Wedding<strong>.</strong></a></div>
                     </div>
                     <div class="col-xs-10 text-right menu-1">
                         <ul>
@@ -483,7 +483,9 @@
             })
 
             var d = new Date();
-            d.setDate(d.getDate() + 43);
+            d.setDate(d.getDate() + 44);
+
+            console.log(d);
 
             var sMessage = '{{ Session::has('sweetAlertMessage') }}';
             if (sMessage == '1') {

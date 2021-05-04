@@ -21,13 +21,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $r)
     {
         $guest = Guest::where('status', 'true')->get();
 
         $parseData = [
             'data' => $guest,
+            'nama' => $r->nama
         ];
+
         return view('welcome', $parseData);
     }
 

@@ -65,7 +65,6 @@
                             <li><a href="#" class="menu" target="fh5co-header">Home</a></li>
                             <li><a href="#" class="menu" target="fh5co-couple-story">Story</a></li>
                             <li><a href="#" class="menu" target="fh5co-event">Event</a></li>
-                            <li><a href="#" class="menu" target="fh5co-gallery">Gallery</a></li>
                             <li><a href="#" class="menu" target="fh5co-testimonial">Pesanmu</a></li>
                             <li><a href="#" class="menu" target="fh5co-started">RSVP</a></li>
                         </ul>
@@ -84,8 +83,26 @@
                             <div class="display-tc animate-box" data-animate-effect="fadeIn">
                                 <h1>Aji &amp; Zakia</h1>
                                 <h2>Kita Akan Menikah Pada</h2>
-                                <div class="simply-countdown simply-countdown-one"></div>
-                                <p><a href="#" target="fh5co-started" class="btn btn-default btn-sm menu">Save the
+                                <div class="simply-countdown simply-countdown-one">
+                                    <div class="simply-section simply-days-section">
+                                        <div><span class="simply-amount">0</span><span class="simply-word">day</span>
+                                        </div>
+                                    </div>
+                                    <div class="simply-section simply-hours-section">
+                                        <div><span class="simply-amount">0</span><span class="simply-word">hour</span>
+                                        </div>
+                                    </div>
+                                    <div class="simply-section simply-minutes-section">
+                                        <div><span class="simply-amount">0</span><span class="simply-word">minute</span>
+                                        </div>
+                                    </div>
+                                    <div class="simply-section simply-seconds-section">
+                                        <div><span class="simply-amount">0</span><span class="simply-word">second</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p><a href="#" target="fh5co-started"
+                                        class="btn btn-default btn-sm menu saveTheData">Save the
                                         date</a>
                                 </p>
                             </div>
@@ -269,7 +286,7 @@
             </div>
         </div>
 
-        <div id="fh5co-gallery" class="fh5co-section-gray">
+        {{-- <div id="fh5co-gallery" class="fh5co-section-gray">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -343,7 +360,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <div id="fh5co-testimonial">
             <div class="container">
@@ -482,8 +499,41 @@
                 }, 800);
             })
 
-            var d = new Date();
-            d.setDate(d.getDate() + 44);
+            // Mengatur waktu akhir perhitungan mundur
+            var countDownDate = new Date("May 7, 2021 00:00:00").getTime();
+
+            // Memperbarui hitungan mundur setiap 1 detik
+            var x = setInterval(function() {
+
+                // Untuk mendapatkan tanggal dan waktu hari ini
+                var now = new Date().getTime();
+
+                // Temukan jarak antara sekarang dan tanggal hitung mundur
+                var distance = countDownDate - now;
+
+                // Perhitungan waktu untuk hari, jam, menit dan detik
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                $('.simply-days-section .simply-amount').html(days);
+                $('.simply-hours-section .simply-amount').html(hours);
+                $('.simply-minutes-section .simply-amount').html(minutes);
+                $('.simply-seconds-section .simply-amount').html(seconds);
+
+                // Jika hitungan mundur selesai, tulis beberapa teks 
+                if (distance < 0) {
+                    clearInterval(x);
+                    $('.simply-countdown').html('<h1>Hari ini!</h1>');
+                    $('.saveTheData').html('beri kami ucapan disini');
+                }
+            }, 1000);
+
+            // var d = new Date("May 17, 2021 00:00:00");
+            // d.setDate(d.getDate() + 10);
+
+            // console.log(d);
 
             var sMessage = '{{ Session::has('sweetAlertMessage') }}';
             if (sMessage == '1') {
@@ -495,12 +545,12 @@
             }
 
             //jQuery example
-            $('.simply-countdown-one').simplyCountdown({
-                year: d.getFullYear(),
-                month: d.getMonth(),
-                day: d.getDate(),
-                enableUtc: false
-            });
+            // $('.simply-countdown-one').simplyCountdown({
+            //     year: d.getFullYear(),
+            //     month: d.getMonth(),
+            //     day: d.getDate(),
+            //     enableUtc: false
+            // });
         });
 
     </script>

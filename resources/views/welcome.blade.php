@@ -415,21 +415,22 @@
                             <div class="col-md-3 col-sm-3">
                                 <div class="form-group">
                                     <label for="name" class="sr-only">Nama</label>
-                                    <input type="name" name="name" class="form-control" id="name" placeholder="Nama">
+                                    <input type="name" name="name" class="form-control" id="name" placeholder="Nama"
+                                        required>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-3">
                                 <div class="form-group">
                                     <label for="email" class="sr-only">Email</label>
-                                    <input type="email" name="email" class="form-control" id="email"
-                                        placeholder="Email">
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Email"
+                                        required>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-3">
                                 <div class="form-group">
                                     <label for="wish" class="sr-only">Harapanmu</label>
                                     <input type="wish" name="wishes" class="form-control" id="wish"
-                                        placeholder="Harapanmu">
+                                        placeholder="Harapanmu" required>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-3">

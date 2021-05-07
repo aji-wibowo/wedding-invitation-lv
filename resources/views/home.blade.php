@@ -16,36 +16,38 @@
                         <div class="alert alert-info">
                             {{ Session::get('message') }}
                         </div>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Nama</th>
-                                    <th>Email</th>
-                                    <th>Wishes</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($data as $item)
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
                                     <tr>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->email }}</td>
-                                        <td>{{ $item->wishes }}</td>
-                                        <td>{{ $item->status }}</td>
-                                        <td>
-                                            @if ($item->status == 'false')
-                                                <a href="{{ route('approve', ['id' => $item->id]) }}"
-                                                    class="btn btn-sm btn-success">show</a>
-                                            @else
-                                                <a href="{{ route('decline', ['id' => $item->id]) }}"
-                                                    class="btn btn-sm btn-warning">hide</a>
-                                            @endif
-                                        </td>
+                                        <th>Nama</th>
+                                        <th>Email</th>
+                                        <th>Wishes</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($data as $item)
+                                        <tr>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->wishes }}</td>
+                                            <td>{{ $item->status }}</td>
+                                            <td>
+                                                @if ($item->status == 'false')
+                                                    <a href="{{ route('approve', ['id' => $item->id]) }}"
+                                                        class="btn btn-sm btn-success">show</a>
+                                                @else
+                                                    <a href="{{ route('decline', ['id' => $item->id]) }}"
+                                                        class="btn btn-sm btn-warning">hide</a>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -36,9 +36,9 @@ class HomeController extends Controller
     public function wish_proses(Request $r)
     {
         $r->validate([
-            'name' => 'requred',
-            'email' => 'requred',
-            'wishes' => 'requred'
+            'name' => 'required',
+            'email' => 'required',
+            'wishes' => 'required'
         ]);
 
         $tambah = Guest::create([

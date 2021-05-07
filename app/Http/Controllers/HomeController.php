@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index(Request $r)
     {
-        $guest = Guest::where('status', 'true')->get();
+        $guest = Guest::where('status', 'true')->orderby('created_at', 'desc')->get();
 
         $parseData = [
             'data' => $guest,

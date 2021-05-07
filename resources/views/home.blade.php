@@ -42,6 +42,8 @@
                                                     <a href="{{ route('decline', ['id' => $item->id]) }}"
                                                         class="btn btn-sm btn-warning">hide</a>
                                                 @endif
+                                                <a href="{{ route('hapus', ['id' => $item->id]) }}"
+                                                    class="btn btn-sm btn-danger hapus">hapus</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -53,4 +55,15 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).on('click', '.hapus', function(e) {
+            e.preventDefault();
+            var ok = confirm('Yakin ingin menghapus data?');
+
+            if (ok) {
+                window.location = $(this).attr('href');
+            }
+        })
+
+    </script>
 @endsection

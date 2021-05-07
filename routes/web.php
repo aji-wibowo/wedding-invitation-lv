@@ -27,3 +27,4 @@ Route::post('/wishes', [App\Http\Controllers\HomeController::class, 'wish_proses
 Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('home');
 Route::get('/approve/{id}', [App\Http\Controllers\AdminController::class, 'approve'])->name('approve');
 Route::get('/decline/{id}', [App\Http\Controllers\AdminController::class, 'decline'])->name('decline');
+Route::get('/hapus/{id}', [App\Http\Controllers\AdminController::class, 'hapus'])->name('hapus');

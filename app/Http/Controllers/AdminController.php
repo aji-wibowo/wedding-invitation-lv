@@ -55,4 +55,19 @@ class AdminController extends Controller
             return redirect('/home')->with('message', 'Status telah gagal dihide');
         }
     }
+
+    public function hapus($id)
+    {
+        $guest = Guest::find($id);
+
+        if ($guest == null) {
+            return redirect('/home')->with('message', 'Maaf, data tidak ditemukan!');
+        }
+
+        if ($guest->delete()) {
+            return redirect('/home')->with('message', 'Status telah berhasil dihapus');
+        } else {
+            return redirect('/home')->with('message', 'Status telah gagal dihapus');
+        }
+    }
 }

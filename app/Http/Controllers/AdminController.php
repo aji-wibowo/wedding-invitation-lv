@@ -14,7 +14,7 @@ class AdminController extends Controller
 
     public function index()
     {
-        $guest = Guest::all();
+        $guest = Guest::orderby('created_at', 'desc')->get();
 
         $parseData = [
             'data' => $guest

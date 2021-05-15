@@ -449,6 +449,7 @@
                     <div class="col-md-12 text-center">
                         <p>
                             <small class="block">&copy; 2021 Aji & Zakia. All Rights Reserved.</small>
+                            <small class="block">Thanks to Kano for the picts.</small>
                         </p>
                     </div>
                 </div>
